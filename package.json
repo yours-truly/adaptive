@@ -8,6 +8,9 @@
   "bin": {
     "adaptive": "./bin/adaptive"
   },
+  "scripts": {
+    "start": "./bin/adaptive"
+  },
   "dependencies": {
     "canvas": "^1.1.6",
     "debug": "^2.0.0",
