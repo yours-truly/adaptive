@@ -2,9 +2,12 @@
   "name": "adaptive",
   "version": "0.0.1",
   "description": "Simple adaptive image server based on smartcrop.js",
-  "main": "lib/index.js",
   "author": "Felix Gnass <fgnass@gmail.com>",
   "license": "MIT",
+  "main": "lib/index.js",
+  "bin": {
+    "adaptive": "./bin/adaptive"
+  },
   "dependencies": {
     "canvas": "^1.1.6",
     "debug": "^2.0.0",

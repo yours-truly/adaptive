@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var minimist = require('minimist')
+var adaptive = require('..')
+
+var opts = minimist(process.argv.slice(2), {
+  alias: { p: 'port', s: 'secret', c: 'cache' },
+  default: {
+    port: process.env.PORT || 3000,
+    secret: process.env.ADAPTIVE_SECRET,
+    cache: process.env.ADAPTIVE_CACHE
+  }
+})
+
+adaptive(opts).listen(opts.port, function() {
+  var a = this.address()
+  console.log('adaptive is listening on %s:%s', a.address, a.port)
+})
