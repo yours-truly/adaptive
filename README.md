@@ -1,4 +1,4 @@
-## adptive
+## adaptive
 
 Simple adaptive image server based on [smartcrop.js](https://github.com/jwagner/smartcrop.js)
 
