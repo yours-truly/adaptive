@@ -27,7 +27,7 @@ directory](http://nodejs.org/api/os.html#os_os_tmpdir).
 
 You can request images using the following URL pattern:
 
-`http://localhost:3000/<auth-key>/<options>/<src-url>`
+`http://localhost:3000/<auth-key>/<width>x<height>/<src-url>`
 
 
 The following URL will generate a 200x200 crop from the example image shown above:
@@ -61,9 +61,18 @@ into a _safe_ URL we must sign the part `200x200/path/to/image.jpg`
 
 ## CLI
 
-Adaptive also comes with a [built-in server](/bin/adaptive):
+Adaptive also comes with a binary that can be used to start a HTTP server:
 
 `adaptive -p <port> -s <secret> -c <cache-dir>`
+
+Alternatively the options can be set using environment variables:
+
+`PORT=3000 SECRET=mysecret npm start`
+
+## Logging
+
+You can turn on [debug](https://www.npmjs.org/package/debug) output by setting
+the `DEBUG` env var to `adaptive:*`
 
 ### The MIT License (MIT)
 
