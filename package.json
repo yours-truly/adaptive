@@ -16,6 +16,7 @@
     "debug": "^2.0.0",
     "express": "^4.9.7",
     "minimist": "^1.1.0",
+    "mkdirp": "^0.5.0",
     "request": "^2.45.0",
     "send": "^0.9.3",
     "smartcrop": "0.0.1"
