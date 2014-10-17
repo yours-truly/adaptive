@@ -1,6 +1,6 @@
 {
   "name": "adaptive",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple adaptive image server based on smartcrop.js",
   "author": "Felix Gnass <fgnass@gmail.com>",
   "license": "MIT",
