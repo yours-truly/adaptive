@@ -31,7 +31,7 @@ You can request images using the following URL pattern:
 
 
 The following URL will generate a 200x200 crop from the example image shown above:
-http://localhost:3000/unsafe/200x200/https://farm6.staticflickr.com/5189/5682480447_2b7f74b4bd_b.jpg
+[http://localhost:3000/unsafe/200x200/https://farm6.staticflickr.com/5189/…](http://localhost:3000/unsafe/200x200/https://farm6.staticflickr.com/5189/5682480447_2b7f74b4bd_b.jpg)
 
 ## Security
 
@@ -68,6 +68,24 @@ Adaptive also comes with a binary that can be used to start a HTTP server:
 Alternatively the options can be set using environment variables:
 
 `PORT=3000 SECRET=mysecret npm start`
+
+### Deploying to Heroku/dokku
+
+The easiest way to deploy _adaptive_ to Heroku or a dokku instance is to create
+an empty project with nothing but a `package.json`:
+```json
+{
+  "name": "my-adaptive-images",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "adaptive"
+  },
+  "dependencies": {
+    "adaptive": "*"
+  }
+}
+```
 
 ## Logging
 
