@@ -69,30 +69,43 @@ Alternatively the options can be set using environment variables:
 
 `PORT=3000 SECRET=mysecret npm start`
 
-### Deploying to Heroku/dokku
+## Deploying to Heroku/dokku
 
 The easiest way to deploy _adaptive_ to Heroku or a dokku instance is to create
 an empty project with nothing but a `package.json`:
 ```json
 {
   "name": "my-adaptive-images",
-  "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "start": "adaptive"
-  },
-  "dependencies": {
-    "adaptive": "*"
-  }
+  "version": "0.0.1",
+  "dependencies": { "adaptive": "*" },
+  "scripts": { "start": "adaptive" }
 }
 ```
 
-## Logging
+### Prerequisites
+
+Adpative uses [node-canvas](https://github.com/Automattic/node-canvas) which in
+turn is based on Cairo. For system-specific installation instructions please
+refer to the [wiki](https://github.com/Automattic/node-canvas/wiki/).
+
+Dokku's Ubuntu image provides all required dependencies except for `libgif`.
+The easiest way to add it is to do this:
+```
+echo https://github.com/ddollar/heroku-buildpack-apt > .buildpacks
+echo https://github.com/heroku/heroku-buildpack-nodejs >> .buildpacks
+echo libgif-dev > Aptfile
+
+git add .buildpacks Aptfile
+git commit -m "add node-canvas prerequisites"
+```
+
+### Logging
 
 You can turn on [debug](https://www.npmjs.org/package/debug) output by setting
 the `DEBUG` env var to `adaptive:*`
 
-### The MIT License (MIT)
+## The MIT License (MIT)
 
 Copyright (c) 2014 Felix Gnass
 
