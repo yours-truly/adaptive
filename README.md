@@ -92,11 +92,11 @@ refer to the [wiki](https://github.com/Automattic/node-canvas/wiki/).
 Dokku's Ubuntu image provides all required dependencies except for `libgif`.
 The easiest way to add it is to do this:
 ```
-echo https://github.com/ddollar/heroku-buildpack-apt > .buildpacks
+echo https://github.com/fgnass/buildpack-install > .buildpacks
 echo https://github.com/heroku/heroku-buildpack-nodejs >> .buildpacks
-echo libgif-dev > Aptfile
+echo apt-get install -y libgif-dev > .install
 
-git add .buildpacks Aptfile
+git add .buildpacks .install
 git commit -m "add node-canvas prerequisites"
 ```
 
