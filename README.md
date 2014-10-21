@@ -33,6 +33,19 @@ You can request images using the following URL pattern:
 The following URL will generate a 200x200 crop from the example image shown above:
 [http://localhost:3000/unsafe/200x200/https://farm6.staticflickr.com/5189/…](http://localhost:3000/unsafe/200x200/https://farm6.staticflickr.com/5189/5682480447_2b7f74b4bd_b.jpg)
 
+### Compression Settings
+
+You can parametrize the JPEG compression by adding `:<quality>` where _quality_
+is a value from 0 to 100, optionally followed by a `p` to create a progressive
+JPEG.
+
+Examples:
+
+* `http://localhost:3000/unsafe/200x200:75/<src-url>` 75% quality
+* `http://localhost:3000/unsafe/200x200:p/<src-url>` progressive, default quality
+* `http://localhost:3000/unsafe/200x200:75p/<src-url>` 75% quality, progressive
+
+
 ## Security
 
 In order to prevent DoS attacks _adaptive_ allows you to specify shared secret
