@@ -82,20 +82,6 @@ Alternatively the options can be set using environment variables:
 
 `PORT=3000 SECRET=mysecret npm start`
 
-## Deploying to Heroku/dokku
-
-The easiest way to deploy _adaptive_ to Heroku or a dokku instance is to create
-an empty project with nothing but a `package.json`:
-```json
-{
-  "name": "my-adaptive-images",
-  "private": true,
-  "version": "0.0.1",
-  "dependencies": { "adaptive": "*" },
-  "scripts": { "start": "adaptive" }
-}
-```
-
 ### Prerequisites
 
 Adpative uses [node-canvas](https://github.com/Automattic/node-canvas) which in
