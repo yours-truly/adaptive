@@ -4,6 +4,10 @@
   "description": "Simple adaptive image server based on smartcrop.js",
   "author": "Felix Gnass <fgnass@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yours-truly/adaptive.git"
+  },
   "main": "lib/index.js",
   "bin": {
     "adaptive": "./bin/adaptive"
