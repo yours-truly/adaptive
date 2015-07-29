@@ -3,6 +3,7 @@ MAINTAINER Yours Truly Technologie <technologie@yourstruly.de>
 LABEL Description="This image is a running version of an adaptive server" Vendor="Yours Truly" Version="0.0.5"
 
 RUN apt-get update && apt-get install -y \
+  runit \
   libcairo2-dev \
   libjpeg62-turbo-dev \
   libpango1.0-dev \
@@ -18,5 +19,7 @@ WORKDIR ${WORK}
 COPY . ${WORK}/
 RUN npm install
 
+ENTRYPOINT ["chpst", "-u", "nobody", "./bin/adaptive"]
+
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD [""]
