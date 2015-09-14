@@ -21,5 +21,4 @@ RUN npm install
 
 ENTRYPOINT ["chpst", "-u", "nobody", "./bin/adaptive"]
 
-EXPOSE 3000
 CMD [""]
